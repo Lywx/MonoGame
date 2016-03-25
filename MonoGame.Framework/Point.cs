@@ -91,6 +91,11 @@ namespace Microsoft.Xna.Framework
 
         #region Operators
 
+        public static Point operator -(Point value)
+        {
+            return new Point(-value.X, -value.Y);
+        }
+
         /// <summary>
         /// Adds two points.
         /// </summary>
@@ -155,6 +160,11 @@ namespace Microsoft.Xna.Framework
         public static bool operator !=(Point a, Point b)
         {
             return !a.Equals(b);
+        }
+
+        public static Point operator *(Point value1, float value2)
+        {
+            return new Point((int)(value1.X * value2), (int)(value1.Y * value2));
         }
 
         #endregion
